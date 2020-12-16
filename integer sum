@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+
+# Created by: Adam Diwani
+# Created on: December 15, 2020
+# This program gives users the sum of an integer from 0-#
+
+
+def main():
+    
+    #Input
+    integer_string = input("Enter a positive integer:")
+    
+    #process
+    try:
+        integer = int(integer_string)
+        
+        #https://stackoverflow.com/questions/34244588/reject-negative-numbers-as-exceptions-in-python
+        #This website helped find an error that prints if the number is negative
+        assert integer > 0 
+        
+        loop_counter = 0
+        integer_sum = 0
+        
+        while loop_counter < integer:
+            loop_counter = loop_counter + 1
+            integer_sum = integer_sum + loop_counter
+            
+            #output
+            print(integer_sum)
+      
+    except AssertionError:
+        print("this integer is negative.")      
+    except Exception:
+        print("This isn't a valid number.")
+   
+        
+if __name__ == "__main__":
+    main()
